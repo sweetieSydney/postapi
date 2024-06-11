@@ -10,6 +10,7 @@ func SetupRouter(db *gorm.DB) *gin.Engine {
 	router := gin.Default()
 
 	router.POST("/issues", handlers.CreateIssue)
+	router.GET("/issues/:id", handlers.GetIssue)
 	router.GET("/issues", handlers.GetAllIssues)
 	router.DELETE("/issues", handlers.DeleteIssues)
 	router.DELETE("/issues/duplicates", handlers.DeleteDuplicateIssues)
