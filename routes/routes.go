@@ -15,7 +15,8 @@ func SetupRouter(db *gorm.DB) *gin.Engine {
 	router.DELETE("/issues/duplicates", handlers.DeleteDuplicateIssues)
 	router.PUT("/issues/:id", handlers.UpdateIssue)
 
-	// Add more routes here as needed
+	router.POST("/users", handlers.CreateUser)
+	router.GET("/users/:username", handlers.GetUser)
 
 	return router
 }

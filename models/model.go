@@ -15,3 +15,12 @@ type Issue struct {
 	CreatedAt   time.Time
 	UpdatedAt   time.Time
 }
+
+type User struct {
+	UserID    uint   `gorm:"primaryKey"`
+	Username  string `gorm:"not null"`
+	Password  string `gorm:"not null"`
+	Email     string `gorm:"not null"`
+	CreatedAt time.Time
+	UpdatedAt time.Time
+}
